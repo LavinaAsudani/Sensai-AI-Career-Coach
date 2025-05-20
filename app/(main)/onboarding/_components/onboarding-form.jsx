@@ -55,11 +55,14 @@ const OnboardingForm = ({industries}) => {
       const formattedIndustry = `${values.industry}-${values.subIndustry
         .toLowerCase()
         .replace(/ /g, "-")}`;
+        
+        console.log("formatted industry:", formattedIndustry)
 
       await updateUserFn({
         ...values,
         industry: formattedIndustry,
       });
+      console.log("update user:")
     } catch (error) {
       console.error("Onboarding error:", error);
     }
